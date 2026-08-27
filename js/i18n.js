@@ -67,6 +67,10 @@ const translations = {
       "بوت تداول آلي بالـ Python يحلّل الكريبتو والأسهم والفوركس بمؤشرات فنية (EMA وRSI وMACD)، ويرصد نشاط الحيتان، ويقترح صفقات بإدارة مخاطر جاهزة — عبر سطر أوامر وبوت تيليجرام يعمل تلقائيًا على GitHub Actions.",
     project4Text:
       "أداة بالـ Python تحوّل نصًّا مكتوبًا إلى فيديو رأسي جاهز للنشر (1080×1920) — تعليق صوتي، صور، مونتاج، وترجمة تلقائية بالكابشن — مخرجات جاهزة لـ YouTube Shorts وTikTok.",
+    project5Text:
+      "صفحة هبوط شخصية بسيطة وأنيقة تجمع روابط التواصل والحسابات في مكان واحد — HTML وCSS نظيفة ومتجاوبة مع كل الشاشات.",
+    project6Text:
+      "تصميم واجهة بورتفوليو بأسلوب عصري (بطاقة تفاعلية بثيم مستقبلي) — تجربة في تصميم واجهات المستخدم بـ HTML وCSS وJavaScript.",
     projectsMore: "شاهد باقي المشاريع على GitHub ←",
 
     servicesTag: "نقاط قوتي",
@@ -159,6 +163,10 @@ const translations = {
       "An automated Python trading bot that analyzes crypto, stocks and forex with technical indicators (EMA, RSI, MACD), detects whale activity, and suggests trades with built-in risk management — via a CLI and a Telegram bot that runs automatically on GitHub Actions.",
     project4Text:
       "A Python tool that turns a written script into an upload-ready vertical video (1080×1920) — voiceover, visuals, editing and auto-generated captions — output ready for YouTube Shorts and TikTok.",
+    project5Text:
+      "A clean, elegant personal landing page that brings together contact and social links in one place — responsive HTML and CSS that works on every screen.",
+    project6Text:
+      "A modern portfolio UI concept (an interactive card with a futuristic theme) — a hands-on experiment in user-interface design with HTML, CSS and JavaScript.",
     projectsMore: "See more projects on GitHub →",
 
     servicesTag: "Strengths",

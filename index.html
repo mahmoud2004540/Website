@@ -167,14 +167,22 @@
 
   <section id="about" class="section">
     <div class="container">
-      <p class="section-tag" data-reveal data-i18n="aboutTag">نبذة عني</p>
-      <h2 data-reveal data-i18n="aboutTitle">مين أنا</h2>
-      <p class="section-lead" data-reveal data-i18n="aboutText">
-        أنا محمود فوزي، مطوّر Full-Stack شغوف ببناء حلول فعّالة وقابلة للتوسّع. بدأت رحلتي بالثانوية العامة
-        وبموازاتها دراسة ذاتية مكثفة أونلاين في تطوير الويب، بداية من مقرر CS50 من جامعة هارفارد، ووصلت من
-        خلالها لبناء منصة كاملة لإدارة الأعمال من الصفر بمفردي. بحب أتعلّم باستمرار، وحاليًا بطوّر مهاراتي في
-        الذكاء الاصطناعي والحوسبة السحابية.
-      </p>
+      <div class="about-intro" data-reveal>
+        <div class="about-avatar">
+          <img src="assets/photo.jpg" alt="Mahmoud Fawzi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <span class="about-avatar-fallback">MF</span>
+        </div>
+        <div class="about-intro-text">
+          <p class="section-tag" data-i18n="aboutTag">نبذة عني</p>
+          <h2 data-i18n="aboutTitle">مين أنا</h2>
+          <p class="section-lead" data-i18n="aboutText">
+            أنا محمود فوزي، مطوّر Full-Stack شغوف ببناء حلول فعّالة وقابلة للتوسّع. بدأت رحلتي بالثانوية العامة
+            وبموازاتها دراسة ذاتية مكثفة أونلاين في تطوير الويب، بداية من مقرر CS50 من جامعة هارفارد، ووصلت من
+            خلالها لبناء منصة كاملة لإدارة الأعمال من الصفر بمفردي. بحب أتعلّم باستمرار، وحاليًا بطوّر مهاراتي في
+            الذكاء الاصطناعي والحوسبة السحابية.
+          </p>
+        </div>
+      </div>
 
       <div class="about-grid">
         <div class="about-card" data-reveal>
@@ -358,6 +366,39 @@
           </div>
           <div class="project-links">
             <a class="btn btn-outline btn-small" href="https://github.com/mahmoud2004540/Creating-videos" target="_blank" rel="noopener noreferrer" data-i18n="projectCta">عرض الكود على GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-mini" data-reveal>
+          <span class="project-emoji" aria-hidden="true">🌐</span>
+          <h3>Personal Landing Page</h3>
+          <p data-i18n="project5Text">
+            صفحة هبوط شخصية بسيطة وأنيقة تجمع روابط التواصل والحسابات في مكان واحد — HTML وCSS نظيفة ومتجاوبة مع كل الشاشات.
+          </p>
+          <div class="project-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Responsive</span>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-outline btn-small" href="https://github.com/mahmoud2004540/new-web" target="_blank" rel="noopener noreferrer" data-i18n="projectCta">عرض الكود على GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-mini" data-reveal>
+          <span class="project-emoji" aria-hidden="true">🎨</span>
+          <h3>Portfolio UI Concept</h3>
+          <p data-i18n="project6Text">
+            تصميم واجهة بورتفوليو بأسلوب عصري (بطاقة تفاعلية بثيم مستقبلي) — تجربة في تصميم واجهات المستخدم بـ HTML وCSS وJavaScript.
+          </p>
+          <div class="project-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>UI Design</span>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-outline btn-small" href="https://github.com/mahmoud2004540/portfolio1" target="_blank" rel="noopener noreferrer" data-i18n="projectCta">عرض الكود على GitHub</a>
           </div>
         </article>
       </div>
