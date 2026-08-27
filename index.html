@@ -336,7 +336,7 @@ body.cursor-view .cursor-dot{opacity:0!important}
       <a href="#about"><span class="idx">01</span>About</a>
       <a href="#work"><span class="idx">02</span>Work</a>
       <a href="#skills"><span class="idx">03</span>Skills</a>
-      <a href="#education"><span class="idx">04</span>Education</a>
+      <a href="#experience"><span class="idx">04</span>Experience</a>
       <a href="#contact" class="nav-cta">Contact</a>
     </div>
     <button class="burger" id="burger" type="button" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -360,9 +360,9 @@ body.cursor-view .cursor-dot{opacity:0!important}
         <span class="ln"><span class="out">FAWZY</span></span>
       </h1>
       <div class="hero-sub">
-        <span>Full-Stack</span><span class="sq">/</span><span>Web</span><span class="sq">/</span><span>AI</span>
+        <span>Full-Stack</span><span class="sq">/</span><span>Web</span><span class="sq">/</span><span>Systems</span>
       </div>
-      <p class="hero-tag">I build <b>web apps</b>, <b>tools</b> and AI-powered products — turning ideas into real, production-ready software.</p>
+      <p class="hero-tag">I build <b>web apps</b> and complete <b>business systems</b> — turning ideas into real, production-ready software.</p>
       <div class="hero-cta">
         <a href="#work" class="btn btn-primary magnetic" data-cursor><span class="dot"></span> View Projects</a>
         <a href="#about" class="btn btn-ghost magnetic" data-cursor>About Me <span class="arw">↗</span></a>
@@ -382,18 +382,18 @@ body.cursor-view .cursor-dot{opacity:0!important}
       <div class="about-grid">
         <p class="about-lead" data-reveal>
           I'm <span class="hl">Mahmoud Fawzy</span>, a <span class="hl">self-taught</span> full-stack
-          developer who turns ideas into <span class="hl">production-ready</span> products. I've built a
-          flight &amp; hotel booking platform, a trading bot, and an AI video tool.
-          <span class="dim">I care about clean code and performance — and I learn fast.</span>
+          developer. I designed and built <span class="hl">Business Management AI</span> — a complete
+          multi-tenant business platform — from scratch, solo, alongside a range of web and automation
+          projects. <span class="dim">I care about clean code and performance, and I'm always learning.</span>
         </p>
         <div class="about-side" data-reveal data-delay="1">
           <p class="lbl">Focus Areas</p>
           <ul class="focus-list">
             <li>Full-Stack Development</li>
+            <li>Business Systems</li>
             <li>Web Applications</li>
-            <li>Automation &amp; Tools</li>
-            <li>AI Integration</li>
-            <li>APIs &amp; Databases</li>
+            <li>Payments Integration</li>
+            <li>AI &amp; Cloud</li>
             <li>Continuous Learning</li>
           </ul>
         </div>
@@ -413,7 +413,22 @@ body.cursor-view .cursor-dot{opacity:0!important}
 
         <article class="work-card magnetic-soft" data-reveal data-cursor="view">
           <div class="wc-body">
-            <span class="wc-num">01 / Web Platform</span>
+            <span class="wc-num">01 / Flagship · SaaS</span>
+            <h3 class="wc-title">Business Management AI</h3>
+            <p class="wc-desc">A multi-tenant platform for managing small businesses and shops — point of sale, inventory, invoicing, expenses, financial reports and staff accounts, plus an AI-generated insights dashboard and real online payments via Stripe &amp; PayPal.</p>
+            <div class="wc-tags"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span><span>Tailwind</span></div>
+            <a class="wc-view" href="business-management-ai-website/index.html" target="_blank" rel="noopener noreferrer">Visit Site →</a>
+          </div>
+          <div class="wc-visual">
+            <div class="vis" style="background:radial-gradient(120% 120% at 30% 10%,#0c2a1e 0%,#050506 60%),linear-gradient(120deg,#0a2a22,#050506)"></div>
+            <span class="tag">↳ FLAGSHIP</span>
+            <span class="arw-badge">↗</span>
+          </div>
+        </article>
+
+        <article class="work-card magnetic-soft" data-reveal data-cursor="view">
+          <div class="wc-body">
+            <span class="wc-num">02 / Web Platform</span>
             <h3 class="wc-title">Rehlati — Flights &amp; Hotels</h3>
             <p class="wc-desc">A flight &amp; hotel search and booking platform that compares prices from multiple providers in a single request. Built with strict typing, full localization and a complete database layer.</p>
             <div class="wc-tags"><span>Next.js 16</span><span>TypeScript</span><span>Prisma</span><span>next-intl</span></div>
@@ -428,7 +443,7 @@ body.cursor-view .cursor-dot{opacity:0!important}
 
         <article class="work-card magnetic-soft" data-reveal data-cursor="view">
           <div class="wc-body">
-            <span class="wc-num">02 / Automation</span>
+            <span class="wc-num">03 / Automation</span>
             <h3 class="wc-title">Trading Deals Bot</h3>
             <p class="wc-desc">An automated Python bot that analyzes crypto, stocks and forex with technical indicators, detects unusual activity, and suggests trades with built-in risk management — via a CLI and a Telegram bot on GitHub Actions.</p>
             <div class="wc-tags"><span>Python</span><span>Technical Analysis</span><span>Telegram</span><span>GitHub Actions</span></div>
@@ -443,7 +458,7 @@ body.cursor-view .cursor-dot{opacity:0!important}
 
         <article class="work-card magnetic-soft" data-reveal data-cursor="view">
           <div class="wc-body">
-            <span class="wc-num">03 / AI Tooling</span>
+            <span class="wc-num">04 / AI Tooling</span>
             <h3 class="wc-title">shortpipe — Script to Video</h3>
             <p class="wc-desc">A Python tool that turns a written script into an upload-ready vertical video (1080×1920) — voiceover, visuals, editing and auto-captions — output ready for YouTube Shorts and TikTok.</p>
             <div class="wc-tags"><span>Python</span><span>Whisper</span><span>FFmpeg</span><span>TTS</span></div>
@@ -452,36 +467,6 @@ body.cursor-view .cursor-dot{opacity:0!important}
           <div class="wc-visual">
             <div class="vis" style="background:radial-gradient(120% 120% at 50% 0%,#1a1230 0%,#050506 60%),linear-gradient(45deg,#0a2a22,transparent)"></div>
             <span class="tag">↳ AI · MEDIA</span>
-            <span class="arw-badge">↗</span>
-          </div>
-        </article>
-
-        <article class="work-card magnetic-soft" data-reveal data-cursor="view">
-          <div class="wc-body">
-            <span class="wc-num">04 / Web</span>
-            <h3 class="wc-title">Personal Landing Page</h3>
-            <p class="wc-desc">A clean, elegant personal landing page that brings together contact and social links in one place — responsive HTML and CSS that works on every screen.</p>
-            <div class="wc-tags"><span>HTML5</span><span>CSS3</span><span>Responsive</span></div>
-            <a class="wc-view" href="https://github.com/mahmoud2004540/new-web" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
-          <div class="wc-visual">
-            <div class="vis" style="background:radial-gradient(120% 120% at 30% 20%,#102a20 0%,#050506 60%),linear-gradient(120deg,#0a2a22,transparent)"></div>
-            <span class="tag">↳ WEB</span>
-            <span class="arw-badge">↗</span>
-          </div>
-        </article>
-
-        <article class="work-card magnetic-soft" data-reveal data-cursor="view">
-          <div class="wc-body">
-            <span class="wc-num">05 / UI Design</span>
-            <h3 class="wc-title">Portfolio UI Concept</h3>
-            <p class="wc-desc">A modern portfolio UI concept — an interactive card with a futuristic theme. A hands-on experiment in user-interface design with HTML, CSS and JavaScript.</p>
-            <div class="wc-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>UI</span></div>
-            <a class="wc-view" href="https://github.com/mahmoud2004540/portfolio1" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
-          <div class="wc-visual">
-            <div class="vis" style="background:radial-gradient(120% 120% at 70% 10%,#161a30 0%,#050506 60%),repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(63,224,162,.05) 21px)"></div>
-            <span class="tag">↳ UI</span>
             <span class="arw-badge">↗</span>
           </div>
         </article>
@@ -510,7 +495,7 @@ body.cursor-view .cursor-dot{opacity:0!important}
         </div>
         <div class="skill-cat">
           <h3>Backend <span class="n">03</span></h3>
-          <div class="chips"><span class="chip">Node.js</span><span class="chip">REST APIs</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span></div>
+          <div class="chips"><span class="chip">Node.js</span><span class="chip">REST APIs</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span><span class="chip">Stripe / PayPal</span></div>
         </div>
         <div class="skill-cat">
           <h3>Tools <span class="n">04</span></h3>
@@ -524,11 +509,30 @@ body.cursor-view .cursor-dot{opacity:0!important}
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="sec-head" data-reveal>
+        <span class="sec-num">04</span>
+        <h2 class="sec-title">Experience</h2>
+        <span class="sec-meta">Timeline</span>
+      </div>
+      <div class="timeline">
+        <div class="tl-item" data-reveal>
+          <p class="tl-when">Ongoing · Personal Project</p>
+          <h3 class="tl-role">Full-Stack Developer — Business Management AI</h3>
+          <p class="tl-where">Self-Directed</p>
+          <p>Designed and built a multi-tenant business management platform from scratch, solo — database, backend and frontend. Point of sale, inventory, invoicing and financial reports; real payments via Stripe and PayPal; an AI-powered insights dashboard; and a trilingual (Arabic / English / Italian) interface with full RTL support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EDUCATION -->
   <section class="section" id="education">
     <div class="container">
       <div class="sec-head" data-reveal>
-        <span class="sec-num">04</span>
+        <span class="sec-num">05</span>
         <h2 class="sec-title">Education</h2>
         <span class="sec-meta">Foundations</span>
       </div>
@@ -552,7 +556,7 @@ body.cursor-view .cursor-dot{opacity:0!important}
   <!-- CONTACT -->
   <section class="section contact" id="contact">
     <div class="container">
-      <p class="lbl" data-reveal>05 — Contact</p>
+      <p class="lbl" data-reveal>06 — Contact</p>
       <h2 class="contact-title" data-reveal>Let's build<br>something.</h2>
       <p class="contact-sub" data-reveal data-delay="1">Have a project, an idea, or an opportunity? I'd love to hear about it.</p>
       <a class="contact-mail magnetic" href="mailto:m.fawzyahmed2004@gmail.com" data-cursor data-reveal data-delay="1">m.fawzyahmed2004@gmail.com</a>
