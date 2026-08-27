@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mahmoud Fawzy — CV</title>
+<meta name="description" content="Curriculum Vitae of Mahmoud Fawzy, Full-Stack Software Engineer." />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#050506" />
+<link rel="canonical" href="https://mahmoud2004540.github.io/Website/cv.html" />
+<meta property="og:title" content="Mahmoud Fawzy — CV" />
+<meta property="og:description" content="CV of Mahmoud Fawzy — Full-Stack Software Engineer." />
+<meta property="og:image" content="https://mahmoud2004540.github.io/Website/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23050506%22/><text x=%2250%22 y=%2266%22 font-size=%2246%22 font-family=%22monospace%22 font-weight=%22bold%22 fill=%22%2340e0a0%22 text-anchor=%22middle%22>MF</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#050506; --panel:#0c0e11; --text:#f3f4f0; --muted:#9aa39b; --faint:#565d57;
+    --line:rgba(255,255,255,.1); --accent:#3fe0a2;
+    --fd:"Space Grotesk","Inter",sans-serif; --fb:"Inter",system-ui,sans-serif; --fm:"JetBrains Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--fb);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+
+  .toolbar{position:sticky;top:0;z-index:10;display:flex;justify-content:center;gap:12px;padding:16px;
+    background:rgba(5,5,6,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .toolbar button,.toolbar a{font:inherit;font-family:var(--fm);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:12px 22px;border-radius:999px;cursor:pointer;border:1px solid var(--line);color:var(--text);background:transparent;
+    transition:border-color .2s,color .2s,background .2s;display:inline-flex;align-items:center;gap:9px}
+  .btn-print{background:var(--accent);color:#04120c;border-color:var(--accent)}
+  .toolbar a:hover{border-color:var(--accent);color:var(--accent)}
+
+  .page{max-width:860px;margin:34px auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:52px 56px;box-shadow:0 40px 90px -40px rgba(0,0,0,.8)}
+
+  .head{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:28px}
+  .name{font-family:var(--fd);font-weight:700;font-size:2.6rem;letter-spacing:-.02em;line-height:1}
+  .name .dot{color:var(--accent)}
+  .role{font-family:var(--fm);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:14px 0 18px}
+  .contact{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--fm);font-size:.8rem;color:var(--muted)}
+  .contact a:hover{color:var(--accent)}
+
+  section{margin-bottom:26px}
+  h2{font-family:var(--fm);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
+    border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:16px;display:flex;gap:10px}
+  h2::before{content:"//";color:var(--accent)}
+  p.sum{color:var(--muted);font-size:.98rem}
+
+  .skills{display:grid;grid-template-columns:130px 1fr;gap:8px 16px;font-size:.9rem}
+  .skills dt{font-family:var(--fm);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);padding-top:2px}
+  .skills dd{margin:0;color:var(--muted)}
+
+  .entry{margin-bottom:18px}
+  .entry:last-child{margin-bottom:0}
+  .etop{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+  .etitle{font-family:var(--fd);font-weight:600;font-size:1.08rem}
+  .estack{font-family:var(--fm);font-size:.74rem;color:var(--faint)}
+  .eorg{color:var(--accent);font-family:var(--fm);font-size:.8rem;margin:3px 0 8px}
+  ul{margin:6px 0 0;padding-inline-start:18px}
+  li{color:var(--muted);font-size:.9rem;margin-bottom:4px}
+  li::marker{color:var(--accent)}
+
+  @media (max-width:640px){.page{padding:34px 24px;margin:16px}.skills{grid-template-columns:1fr;gap:2px}.name{font-size:2rem}}
+
+  @media print{
+    :root{--bg:#fff;--panel:#fff;--text:#111;--muted:#333;--faint:#666;--line:#ddd;--accent:#0a7a4f}
+    .toolbar{display:none}
+    body{background:#fff}
+    .page{box-shadow:none;border:0;margin:0;max-width:none;padding:0;border-radius:0}
+    a{color:#111}
+    .entry,section{page-break-inside:avoid}
+    @page{margin:15mm}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="btn-print" type="button" onclick="window.print()">⤓ Save as PDF</button>
+  <a href="index.html">← Back to portfolio</a>
+</div>
+
+<div class="page">
+  <header class="head">
+    <div class="name">Mahmoud Fawzy<span class="dot">.</span></div>
+    <div class="role">Full-Stack Software Engineer</div>
+    <div class="contact">
+      <a href="mailto:m.fawzyahmed2004@gmail.com">m.fawzyahmed2004@gmail.com</a>
+      <a href="tel:3930525843">+20 3930525843</a>
+      <a href="https://github.com/mahmoud2004540" target="_blank" rel="noopener">github.com/mahmoud2004540</a>
+      <a href="https://www.linkedin.com/in/mahmoud-fawzi-2162b33a1" target="_blank" rel="noopener">linkedin.com/in/mahmoud-fawzi-2162b33a1</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p class="sum">Self-taught full-stack software engineer who turns ideas into production-ready products.
+      I designed and built Business Management AI — a complete multi-tenant business platform — from scratch,
+      solo, alongside a range of web and automation projects. I care about clean code, performance and shipping,
+      and I'm looking to join a technical team where I can contribute and keep growing.</p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>JavaScript, TypeScript, Python, HTML5, CSS3, SQL</dd>
+      <dt>Frontend</dt><dd>React, Next.js, Tailwind CSS, responsive &amp; RTL design</dd>
+      <dt>Backend</dt><dd>Node.js, REST APIs, authentication, multi-tenant architecture</dd>
+      <dt>Databases</dt><dd>PostgreSQL, Prisma ORM</dd>
+      <dt>Integrations</dt><dd>Stripe, PayPal, third-party APIs</dd>
+      <dt>Tools</dt><dd>Git, GitHub, i18n / localization, cloud, AI (learning)</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="entry">
+      <div class="etop"><span class="etitle">Full-Stack Developer — Business Management AI</span><span class="estack">Ongoing · Personal Project</span></div>
+      <div class="eorg">Self-Directed</div>
+      <ul>
+        <li>Designed and built a multi-tenant business management platform from scratch, solo — database, backend and frontend.</li>
+        <li>Point of sale, inventory, invoicing, expenses, financial reports and staff accounts.</li>
+        <li>Real online payments via Stripe and PayPal, plus a customer portal.</li>
+        <li>AI-powered insights dashboard and a trilingual (Arabic / English / Italian) interface with full RTL.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Projects</h2>
+    <div class="entry">
+      <div class="etop"><span class="etitle">Rehlati — Flights &amp; Hotels</span><span class="estack">Next.js 16 · TypeScript · Prisma</span></div>
+      <ul>
+        <li>Flight &amp; hotel search and booking platform comparing prices from multiple providers in one request.</li>
+        <li>Strict TypeScript, full Arabic/English localization, and a complete Prisma database schema.</li>
+        <li>github.com/mahmoud2004540/Book-flights-and-hotels</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="etop"><span class="etitle">Trading Deals Bot</span><span class="estack">Python · Telegram · GitHub Actions</span></div>
+      <ul>
+        <li>Automated bot analyzing crypto, stocks and forex with technical indicators and whale detection.</li>
+        <li>Suggests trades with risk management via a CLI and a Telegram bot running on GitHub Actions.</li>
+        <li>github.com/mahmoud2004540/app</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="etop"><span class="etitle">shortpipe — Script to Video</span><span class="estack">Python · Whisper · FFmpeg</span></div>
+      <ul>
+        <li>Turns a written script into an upload-ready vertical video (1080×1920) — voiceover, visuals, editing and auto-captions.</li>
+        <li>github.com/mahmoud2004540/Creating-videos</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="etop"><span class="etitle">CS50: Introduction to Computer Science</span><span class="estack">Self-Taught</span></div>
+      <div class="eorg">Harvard University — Online</div>
+      <ul><li>Computer-science fundamentals, algorithms and full-stack web development, self-studied online.</li></ul>
+    </div>
+    <div class="entry">
+      <div class="etop"><span class="etitle">High School Diploma</span><span class="estack">Completed</span></div>
+      <div class="eorg">Secondary Education</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <p class="sum">Arabic (Native) · English (Professional working proficiency)</p>
+  </section>
+</div>
+
+</body>
+</html>
