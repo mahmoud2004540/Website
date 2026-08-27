@@ -4,15 +4,54 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mahmoud Fawzi — Full-Stack Software Engineer</title>
-<meta name="description" content="Mahmoud Fawzi — Full-Stack Software Engineer open to new opportunities. Building web applications and business management systems with React, Next.js, Node.js and PostgreSQL." />
-<meta property="og:title" content="Mahmoud Fawzi — Full-Stack Software Engineer" />
-<meta property="og:description" content="Full-stack software engineer open to work — building production-ready web applications and business systems." />
+<meta name="description" content="Mahmoud Fawzi — Full-Stack Software Engineer open to new opportunities. I build production-ready web apps and systems with React, Next.js, Node.js, TypeScript, Python and PostgreSQL. See my projects: Business Management AI, a flights & hotels booking platform, a trading bot, and an AI video tool." />
+<meta name="author" content="Mahmoud Fawzi" />
+<meta name="keywords" content="Mahmoud Fawzi, Full-Stack Developer, Software Engineer, React, Next.js, Node.js, TypeScript, Python, PostgreSQL, Prisma, Web Developer, Egypt, مطور مواقع, مهندس برمجيات" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#2952e3" />
+<link rel="canonical" href="https://mahmoud2004540.github.io/Website/" />
+
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="Mahmoud Fawzi — Portfolio" />
+<meta property="og:title" content="Mahmoud Fawzi — Full-Stack Software Engineer" />
+<meta property="og:description" content="Full-stack software engineer open to work — building production-ready web applications, business systems, and automation tools." />
+<meta property="og:url" content="https://mahmoud2004540.github.io/Website/" />
+<meta property="og:image" content="https://mahmoud2004540.github.io/Website/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:locale:alternate" content="en_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mahmoud Fawzi — Full-Stack Software Engineer" />
+<meta name="twitter:description" content="Full-stack software engineer open to work — web apps, business systems, and automation tools." />
+<meta name="twitter:image" content="https://mahmoud2004540.github.io/Website/og-image.png" />
+
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mahmoud Fawzi",
+  "alternateName": "محمود فوزي",
+  "url": "https://mahmoud2004540.github.io/Website/",
+  "image": "https://mahmoud2004540.github.io/Website/og-image.png",
+  "jobTitle": "Full-Stack Software Engineer",
+  "email": "mailto:m.fawzyahmed2004@gmail.com",
+  "description": "Full-stack software engineer building web applications, business management systems, and automation tools.",
+  "knowsAbout": ["Full-Stack Development", "React", "Next.js", "Node.js", "TypeScript", "Python", "PostgreSQL", "Prisma", "REST APIs", "Web Development"],
+  "sameAs": [
+    "https://github.com/mahmoud2004540",
+    "https://www.linkedin.com/in/mahmoud-fawzi-2162b33a1"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -257,22 +296,75 @@
             <span>Prisma</span>
             <span>Tailwind CSS</span>
           </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 12px">
+          <div class="project-links">
             <a
               class="btn btn-primary btn-small"
               href="business-management-ai-website/index.html"
               data-i18n="projectSiteCta"
             >زيارة موقع المنتج</a>
-            <a
-              class="btn btn-outline btn-small"
-              href="https://github.com/mahmoud2004540/Website"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n="projectCta"
-            >عرض الكود على GitHub</a>
           </div>
         </div>
       </div>
+
+      <div class="projects-grid">
+        <article class="project-mini" data-reveal>
+          <span class="project-emoji" aria-hidden="true">✈️</span>
+          <h3>Rehlati — Flights &amp; Hotels</h3>
+          <p data-i18n="project2Text">
+            منصة بحث وحجز طيران وفنادق تقارن الأسعار من عدة مزوّدين في طلب واحد، مبنية بـ Next.js 16
+            وTypeScript صارم، مع توطين كامل عربي/إنجليزي، وضع داكن، ومخطط قاعدة بيانات كامل بـ Prisma.
+          </p>
+          <div class="project-tags">
+            <span>Next.js 16</span>
+            <span>TypeScript</span>
+            <span>Prisma</span>
+            <span>next-intl</span>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-outline btn-small" href="https://github.com/mahmoud2004540/Book-flights-and-hotels" target="_blank" rel="noopener noreferrer" data-i18n="projectCta">عرض الكود على GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-mini" data-reveal>
+          <span class="project-emoji" aria-hidden="true">📈</span>
+          <h3>Trading Deals Bot</h3>
+          <p data-i18n="project3Text">
+            بوت تداول آلي بالـ Python يحلّل الكريبتو والأسهم والفوركس بمؤشرات فنية (EMA وRSI وMACD)،
+            ويرصد نشاط الحيتان، ويقترح صفقات بإدارة مخاطر جاهزة — عبر سطر أوامر وبوت تيليجرام يعمل تلقائيًا على GitHub Actions.
+          </p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Technical Analysis</span>
+            <span>Telegram Bot</span>
+            <span>GitHub Actions</span>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-outline btn-small" href="https://github.com/mahmoud2004540/app" target="_blank" rel="noopener noreferrer" data-i18n="projectCta">عرض الكود على GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-mini" data-reveal>
+          <span class="project-emoji" aria-hidden="true">🎬</span>
+          <h3>shortpipe — Script to Video</h3>
+          <p data-i18n="project4Text">
+            أداة بالـ Python تحوّل نصًّا مكتوبًا إلى فيديو رأسي جاهز للنشر (1080×1920) — تعليق صوتي،
+            صور، مونتاج، وترجمة تلقائية بالكابشن — مخرجات جاهزة لـ YouTube Shorts وTikTok.
+          </p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Whisper</span>
+            <span>FFmpeg</span>
+            <span>TTS</span>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-outline btn-small" href="https://github.com/mahmoud2004540/Creating-videos" target="_blank" rel="noopener noreferrer" data-i18n="projectCta">عرض الكود على GitHub</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="projects-more" data-reveal>
+        <a href="https://github.com/mahmoud2004540?tab=repositories" target="_blank" rel="noopener noreferrer" data-i18n="projectsMore">شاهد باقي المشاريع على GitHub ←</a>
+      </p>
     </div>
   </section>
 

@@ -61,6 +61,13 @@ const translations = {
       "منصة متعددة المستأجرين (Multi-tenant) لإدارة الأعمال الصغيرة والمتاجر — نقاط بيع، مخزون، فواتير، مصروفات، تقارير مالية، حسابات موظفين، ولوحة تحكم بها رؤى ذكية مولّدة من بيانات كل عمل، بالإضافة إلى بوابة عملاء ودفع إلكتروني حقيقي عبر Stripe وPayPal.",
     projectCta: "عرض الكود على GitHub",
     projectSiteCta: "زيارة موقع المنتج",
+    project2Text:
+      "منصة بحث وحجز طيران وفنادق تقارن الأسعار من عدة مزوّدين في طلب واحد، مبنية بـ Next.js 16 وTypeScript صارم، مع توطين كامل عربي/إنجليزي، وضع داكن، ومخطط قاعدة بيانات كامل بـ Prisma.",
+    project3Text:
+      "بوت تداول آلي بالـ Python يحلّل الكريبتو والأسهم والفوركس بمؤشرات فنية (EMA وRSI وMACD)، ويرصد نشاط الحيتان، ويقترح صفقات بإدارة مخاطر جاهزة — عبر سطر أوامر وبوت تيليجرام يعمل تلقائيًا على GitHub Actions.",
+    project4Text:
+      "أداة بالـ Python تحوّل نصًّا مكتوبًا إلى فيديو رأسي جاهز للنشر (1080×1920) — تعليق صوتي، صور، مونتاج، وترجمة تلقائية بالكابشن — مخرجات جاهزة لـ YouTube Shorts وTikTok.",
+    projectsMore: "شاهد باقي المشاريع على GitHub ←",
 
     servicesTag: "نقاط قوتي",
     servicesTitle: "إيه اللي بضيفه لفريقك",
@@ -146,6 +153,13 @@ const translations = {
       "A multi-tenant platform for managing small businesses and shops — point of sale, inventory, invoicing, expenses, financial reports, staff accounts, and an AI-generated insights dashboard for each business, plus a customer portal with real online payments via Stripe and PayPal.",
     projectCta: "View Code on GitHub",
     projectSiteCta: "Visit Product Site",
+    project2Text:
+      "A flight & hotel search and booking platform that compares prices from multiple providers in a single request. Built with Next.js 16 and strict TypeScript, with full Arabic/English localization, dark mode, and a complete Prisma database schema.",
+    project3Text:
+      "An automated Python trading bot that analyzes crypto, stocks and forex with technical indicators (EMA, RSI, MACD), detects whale activity, and suggests trades with built-in risk management — via a CLI and a Telegram bot that runs automatically on GitHub Actions.",
+    project4Text:
+      "A Python tool that turns a written script into an upload-ready vertical video (1080×1920) — voiceover, visuals, editing and auto-generated captions — output ready for YouTube Shorts and TikTok.",
+    projectsMore: "See more projects on GitHub →",
 
     servicesTag: "Strengths",
     servicesTitle: "What I Bring to Your Team",
