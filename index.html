@@ -44,6 +44,7 @@
   "sameAs": ["https://github.com/mahmoud2004540", "https://www.linkedin.com/in/mahmoud-fawzi-2162b33a1"]
 }
 </script>
+<script>if(/^((?!chrome|chromium|android|crios|fxios|edg).)*safari/i.test(navigator.userAgent))document.documentElement.classList.add("flat3d");</script>
 <style>
 :root{
   --bg:#050506; --bg-1:#08090b; --bg-2:#0c0e11; --surface:#0f1216;
@@ -185,6 +186,15 @@ body.cursor-view .cursor-dot{opacity:0!important}
 .pad{position:absolute;left:35%;right:35%;bottom:8%;height:25%;border-radius:.6em;background:#202428;box-shadow:inset 0 0 0 1px #343a3f}
 .shadow{position:absolute;left:-6%;right:-6%;top:100%;height:80%;transform-origin:50% 0;transform:rotateX(90deg) translateZ(-2px);
   background:radial-gradient(closest-side,rgba(63,224,162,.18),transparent);filter:blur(10px)}
+/* Safari (iOS + macOS) gets a flat laptop: WebKit is unreliable with preserve-3d + backface-visibility */
+html.flat3d .stage{perspective:none}
+html.flat3d .tilt,html.flat3d .laptop,html.flat3d .lid{transform-style:flat}
+html.flat3d .screen,html.flat3d .lid-back{backface-visibility:visible;-webkit-backface-visibility:visible}
+html.flat3d .lid-back{display:none}
+html.flat3d .base{transform:none;top:100%;left:-7%;width:114%;height:5.5%;border-radius:0 0 1.2em 1.2em;background:linear-gradient(180deg,#3a4045,#1a1d21)}
+html.flat3d .base::before{content:"";position:absolute;left:42%;right:42%;top:0;height:40%;border-radius:0 0 .5em .5em;background:#15181b}
+html.flat3d .keys,html.flat3d .pad{display:none}
+html.flat3d .shadow{transform:none;top:104%;height:40%;left:0;right:0}
 /* screen UI */
 .os{position:absolute;inset:0;display:flex;flex-direction:column}
 .os-bar{display:flex;align-items:center;gap:.5em;padding:.7em 1em;border-bottom:1px solid #1d2125;background:#0e1113}
@@ -373,8 +383,18 @@ body.cursor-view .cursor-dot{opacity:0!important}
   .hero-cta .btn{flex:1 1 auto;justify-content:center}
   .scroll-ind{display:none}
   .device{position:relative;inset:auto;opacity:1;visibility:visible;margin:64px 0 0;gap:22px}
-  .laptop{--w:74vw;font-size:calc(var(--w) / 38)}
-  .stage{perspective:1200px}
+  .laptop{--w:78vw;font-size:calc(var(--w) / 38)}
+  /* phones get a flat 2D laptop: iOS Safari is unreliable with preserve-3d + backface-visibility */
+  .stage{perspective:none}
+  .tilt,.laptop,.lid{transform-style:flat}
+  .screen,.lid-back{backface-visibility:visible;-webkit-backface-visibility:visible}
+  .lid-back{display:none}
+  .lid{transform-origin:50% 100%}
+  .base{transform:none;top:100%;left:-7%;width:114%;height:5.5%;border-radius:0 0 1.2em 1.2em;
+    background:linear-gradient(180deg,#3a4045,#1a1d21)}
+  .base::before{content:"";position:absolute;left:42%;right:42%;top:0;height:40%;border-radius:0 0 .5em .5em;background:#15181b}
+  .keys,.pad{display:none}
+  .shadow{transform:none;top:104%;height:40%;left:0;right:0}
   .facts{grid-template-columns:1fr 1fr}
   .fact{padding:24px 18px}
   .mock-video{gap:14px}
@@ -864,8 +884,9 @@ body.cursor-view .cursor-dot{opacity:0!important}
        runs a security checklist and the camera dives into its screen */
     var lines = $$("#term p");
     gsap.set("#device", { autoAlpha:1 });
-    gsap.set("#laptop", { y:"115vh", rotationX:58, rotationY:-28, rotationZ:6, scale:.62 });
-    gsap.set("#lid", { rotationX:-90 });
+    gsap.set("#laptop", flat ? { y:"115vh", rotationZ:6, scale:.62 } : { y:"115vh", rotationX:58, rotationY:-28, rotationZ:6, scale:.62 });
+    var flat = document.documentElement.classList.contains("flat3d");
+    gsap.set("#lid", flat ? { scaleY:.04 } : { rotationX:-90 });
     gsap.set(".device-cap", { y:30, opacity:0 });
     gsap.set("#os", { opacity:0 }); gsap.set(lines, { opacity:0 });
     var tl = gsap.timeline({ defaults:{ ease:"none" }, scrollTrigger:{ trigger:"#hero", start:"top top", end:"+=340%", pin:true, scrub:1, anticipatePin:1 } });
@@ -879,8 +900,8 @@ body.cursor-view .cursor-dot{opacity:0!important}
       /* rise in, closed */
       .to("#laptop", { y:"6vh", rotationZ:0, scale:.78, ease:"power3.out", duration:1.2 }, 0.7)
       /* open the lid and turn towards the viewer */
-      .to("#lid", { rotationX:10, ease:"power2.inOut", duration:1.3 }, 1.6)
-      .to("#laptop", { y:"2vh", rotationX:12, rotationY:0, scale:1, ease:"power2.inOut", duration:1.3 }, 1.6)
+      .to("#lid", flat ? { scaleY:1, ease:"power2.inOut", duration:1.3 } : { rotationX:10, ease:"power2.inOut", duration:1.3 }, 1.6)
+      .to("#laptop", { y:"2vh", rotationX:flat?0:12, rotationY:0, scale:1, ease:"power2.inOut", duration:1.3 }, 1.6)
       .to("#os", { opacity:1, duration:.4 }, 2.6)
       .to(".device-cap", { y:0, opacity:1, ease:"power2.out", duration:.5 }, 2.5)
       /* the checklist runs line by line */
@@ -922,11 +943,11 @@ body.cursor-view .cursor-dot{opacity:0!important}
   /* ===== Mobile / tablet: lighter, no pinning ===== */
   mm.add("(max-width: 900px)", function(){
     var lines = $$("#term p");
-    gsap.set("#lid", { rotationX:-90 }); gsap.set("#laptop", { rotationX:55, scale:.9 });
+    gsap.set("#lid", { scaleY:.04 }); gsap.set("#laptop", { scale:.88, y:30 });
     gsap.set("#os", { opacity:0 }); gsap.set(lines, { opacity:0 });
-    var mt = gsap.timeline({ defaults:{ ease:"none" }, scrollTrigger:{ trigger:"#device", start:"top 85%", end:"bottom 35%", scrub:0.8 } });
-    mt.to("#lid", { rotationX:10, ease:"power2.inOut", duration:1 }, 0)
-      .to("#laptop", { rotationX:12, scale:1, ease:"power2.inOut", duration:1 }, 0)
+    var mt = gsap.timeline({ defaults:{ ease:"none" }, scrollTrigger:{ trigger:"#device", start:"top 95%", end:"bottom 30%", scrub:0.8 } });
+    mt.to("#lid", { scaleY:1, ease:"power2.inOut", duration:1 }, 0)
+      .to("#laptop", { scale:1, y:0, ease:"power2.out", duration:1 }, 0)
       .to("#os", { opacity:1, duration:.2 }, .8)
       .to(lines, { opacity:1, stagger:.1, duration:.08 }, 1);
     gsap.to(".hero-name .l1", { xPercent:-14, ease:"none", scrollTrigger:{ trigger:"#hero", start:"top top", end:"bottom top", scrub:true } });
