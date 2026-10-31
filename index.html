@@ -163,16 +163,40 @@ body.cursor-view .cursor-dot{opacity:0!important}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
 
 /* the lock that closes as you scroll */
-.hero-lock{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;
-  align-items:center;gap:26px;pointer-events:none;opacity:0;visibility:hidden}
-.hero-lock svg{width:clamp(120px,16vw,190px);height:auto;overflow:visible;filter:drop-shadow(0 0 40px rgba(63,224,162,.25))}
-.hero-lock .ring{fill:none;stroke:var(--accent);stroke-width:1.5}
-.hero-lock .ring-bg{fill:none;stroke:var(--line-2);stroke-width:1}
-.hero-lock .body{fill:#0b0e0d;stroke:var(--accent);stroke-width:2.5}
-.hero-lock .shackle{fill:none;stroke:var(--accent);stroke-width:7;stroke-linecap:round}
-.hero-lock .key{fill:var(--accent)}
-.hero-lock .cap{font-family:var(--fd);font-weight:600;font-size:clamp(1.6rem,4vw,3rem);letter-spacing:-.02em;text-align:center;line-height:1.05}
-.hero-lock .cap small{display:block;font-family:var(--fm);font-weight:400;font-size:.72rem;letter-spacing:.24em;color:var(--accent);margin-bottom:12px;text-transform:uppercase}
+/* 3D laptop that opens, turns and runs a security checklist as you scroll */
+.device{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  pointer-events:none;opacity:0;visibility:hidden}
+.device-cap{font-family:var(--fd);font-weight:600;font-size:clamp(1.4rem,2.6vw,2.2rem);letter-spacing:-.02em;text-align:center;line-height:1.1}
+.device-cap small{display:block;font-family:var(--fm);font-weight:400;font-size:.7rem;letter-spacing:.24em;color:var(--accent);margin-bottom:10px;text-transform:uppercase}
+.stage{perspective:1900px;perspective-origin:50% 30%}
+.tilt{transform-style:preserve-3d;will-change:transform}
+.laptop{--w:min(60vw,800px);width:var(--w);aspect-ratio:16/10;position:relative;transform-style:preserve-3d;font-size:calc(var(--w) / 52);will-change:transform}
+.lid{position:absolute;inset:0;transform-origin:50% 100%;transform-style:preserve-3d;will-change:transform}
+.screen,.lid-back{position:absolute;inset:0;border-radius:1.6em;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.screen{background:radial-gradient(120% 90% at 50% 0%,#0f1a16,#0a0c0e 60%);border:1em solid #16191c;box-shadow:inset 0 0 0 1px #2a2f33,0 0 0 1px #2a2f33;overflow:hidden}
+.screen::before{content:"";position:absolute;left:50%;top:-.62em;width:.42em;height:.42em;border-radius:50%;background:#2c3135;transform:translateX(-50%)}
+.glare{position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.07) 0 22%,transparent 40%);pointer-events:none}
+.lid-back{transform:rotateY(180deg);background:linear-gradient(135deg,#2b3035,#14171a 70%);box-shadow:inset 0 0 0 1px #3a4045;display:grid;place-items:center}
+.lid-back span{font-family:var(--fm);font-weight:600;font-size:3.4em;color:#3fe0a2;opacity:.85;text-shadow:0 0 1.2em rgba(63,224,162,.6)}
+.base{position:absolute;left:-4%;width:108%;height:66%;top:100%;transform-origin:50% 0;transform:rotateX(90deg);
+  background:linear-gradient(180deg,#2a2e33,#1a1d21);border-radius:.4em .4em 1.8em 1.8em;box-shadow:inset 0 0 0 1px #3a4045}
+.keys{position:absolute;left:7%;right:7%;top:9%;height:52%;border-radius:.5em;
+  background:repeating-linear-gradient(90deg,#121417 0 6.2%,transparent 6.2% 7.2%),repeating-linear-gradient(180deg,#121417 0 15%,transparent 15% 20%);opacity:.9}
+.pad{position:absolute;left:35%;right:35%;bottom:8%;height:25%;border-radius:.6em;background:#202428;box-shadow:inset 0 0 0 1px #343a3f}
+.shadow{position:absolute;left:-6%;right:-6%;top:100%;height:80%;transform-origin:50% 0;transform:rotateX(90deg) translateZ(-2px);
+  background:radial-gradient(closest-side,rgba(63,224,162,.18),transparent);filter:blur(10px)}
+/* screen UI */
+.os{position:absolute;inset:0;display:flex;flex-direction:column}
+.os-bar{display:flex;align-items:center;gap:.5em;padding:.7em 1em;border-bottom:1px solid #1d2125;background:#0e1113}
+.os-bar i{width:.7em;height:.7em;border-radius:50%;background:#ff5f56}.os-bar i:nth-child(2){background:#ffbd2e}.os-bar i:nth-child(3){background:#27c93f}
+.os-bar b{font-family:var(--fm);font-weight:400;font-size:.8em;color:#6b746e;margin-inline-start:.6em}
+.term{flex:1;padding:1.2em 1.4em;font-family:var(--fm);font-size:1em;line-height:1.75;color:#c9d1cc;overflow:hidden}
+.term p{white-space:nowrap}
+.term .cmd{color:#3fe0a2}
+.term .ok::before{content:"✓ ";color:#3fe0a2}
+.term .fin{color:#04120c;background:#3fe0a2;display:inline-block;padding:0 .5em;border-radius:.2em;margin-top:.3em;font-weight:600}
+.term .cur{display:inline-block;width:.55em;height:1.1em;background:#3fe0a2;vertical-align:-.2em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
 
 .scroll-ind{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;font-family:var(--fm);
   font-size:.66rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
@@ -348,6 +372,9 @@ body.cursor-view .cursor-dot{opacity:0!important}
   .hero-name{font-size:17.5vw}
   .hero-cta .btn{flex:1 1 auto;justify-content:center}
   .scroll-ind{display:none}
+  .device{position:relative;inset:auto;opacity:1;visibility:visible;margin:64px 0 0;gap:22px}
+  .laptop{--w:74vw;font-size:calc(var(--w) / 38)}
+  .stage{perspective:1200px}
   .facts{grid-template-columns:1fr 1fr}
   .fact{padding:24px 18px}
   .mock-video{gap:14px}
@@ -412,16 +439,35 @@ body.cursor-view .cursor-dot{opacity:0!important}
         </div>
       </div>
     </div>
-    <div class="hero-lock" aria-hidden="true">
-      <svg viewBox="0 0 200 200">
-        <circle class="ring-bg" cx="100" cy="100" r="96"/>
-        <circle class="ring" cx="100" cy="100" r="96" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" transform="rotate(-90 100 100)"/>
-        <path class="shackle" d="M70 92 V70 a30 30 0 0 1 60 0 V92"/>
-        <rect class="body" x="56" y="88" width="88" height="70" rx="12"/>
-        <circle class="key" cx="100" cy="118" r="8"/>
-        <rect class="key" x="96.5" y="120" width="7" height="18" rx="3"/>
-      </svg>
-      <p class="cap"><small>Secure by design</small>Building software<br>that stays locked.</p>
+    <div class="device" id="device" aria-hidden="true">
+      <p class="device-cap"><small>Secure by design</small>Software that stays locked.</p>
+      <div class="stage"><div class="tilt" id="tilt">
+        <div class="laptop" id="laptop">
+          <div class="shadow"></div>
+          <div class="base"><div class="keys"></div><div class="pad"></div></div>
+          <div class="lid" id="lid">
+            <div class="lid-back"><span>MF</span></div>
+            <div class="screen">
+              <div class="os" id="os">
+                <div class="os-bar"><i></i><i></i><i></i><b>security-checklist — business-management-ai</b></div>
+                <div class="term" id="term">
+                  <p class="cmd">$ ./security-checklist --app business-management-ai</p>
+                  <p class="ok">passwords hashed with bcrypt</p>
+                  <p class="ok">session cookie signed · httpOnly · sameSite</p>
+                  <p class="ok">TOTP two-factor authentication</p>
+                  <p class="ok">role checks on the server · 4 roles</p>
+                  <p class="ok">every query scoped to its own business</p>
+                  <p class="ok">card data never touches the server</p>
+                  <p class="ok">API secrets encrypted · AES-256-GCM</p>
+                  <p class="ok">audit log of sensitive actions</p>
+                  <p><span class="fin">SECURE BY DESIGN</span> <span class="cur"></span></p>
+                </div>
+              </div>
+              <div class="glare"></div>
+            </div>
+          </div>
+        </div>
+      </div></div>
     </div>
     <div class="scroll-ind" aria-hidden="true"><span>Scroll</span><span class="bar"></span></div>
   </header>
@@ -814,21 +860,45 @@ body.cursor-view .cursor-dot{opacity:0!important}
   /* ===== Desktop: pinned, scroll-scrubbed scenes ===== */
   mm.add("(min-width: 901px)", function(){
 
-    /* HERO: name splits apart, a scan line sweeps down, and a padlock locks */
-    var lock = $(".hero-lock");
-    var tl = gsap.timeline({ scrollTrigger:{ trigger:"#hero", start:"top top", end:"+=130%", pin:true, scrub:0.8, anticipatePin:1 } });
-    tl.to(".hero-text, .hero-meta, .scroll-ind", { y:-50, opacity:0, ease:"power2.in", duration:.25 }, 0)
-      .to(".hero-name .l1", { xPercent:-70, opacity:0, ease:"power2.inOut", duration:.55 }, 0.05)
-      .to(".hero-name .l2", { xPercent:70, opacity:0, ease:"power2.inOut", duration:.55 }, 0.05)
-      .to("#grid-canvas", { scale:1.35, opacity:.9, ease:"none", duration:1 }, 0)
-      .to(".hero-glow", { left:"50%", top:"50%", scale:1.4, ease:"none", duration:.8 }, 0)
-      .fromTo(".scanline", { yPercent:-100, top:"0%", opacity:1 }, { top:"100%", ease:"none", duration:.6 }, 0.1)
-      .to(".scanline", { opacity:0, duration:.1 }, 0.62)
-      .fromTo(lock, { autoAlpha:0, scale:.55 }, { autoAlpha:1, scale:1, ease:"back.out(1.6)", duration:.35 }, 0.42)
-      .fromTo(".hero-lock .ring", { strokeDashoffset:1 }, { strokeDashoffset:0, ease:"none", duration:.4 }, 0.55)
-      .fromTo(".hero-lock .shackle", { y:-22 }, { y:0, ease:"bounce.out", duration:.2 }, 0.8)
-      .fromTo(".hero-lock .cap", { y:20, opacity:0 }, { y:0, opacity:1, duration:.2 }, 0.78);
+    /* HERO: the name splits, a scan line sweeps, then a 3D laptop rises, opens, turns to you,
+       runs a security checklist and the camera dives into its screen */
+    var lines = $$("#term p");
+    gsap.set("#device", { autoAlpha:1 });
+    gsap.set("#laptop", { y:"115vh", rotationX:58, rotationY:-28, rotationZ:6, scale:.62 });
+    gsap.set("#lid", { rotationX:-90 });
+    gsap.set(".device-cap", { y:30, opacity:0 });
+    gsap.set("#os", { opacity:0 }); gsap.set(lines, { opacity:0 });
+    var tl = gsap.timeline({ defaults:{ ease:"none" }, scrollTrigger:{ trigger:"#hero", start:"top top", end:"+=340%", pin:true, scrub:1, anticipatePin:1 } });
+    tl.to(".hero-text, .hero-meta, .scroll-ind", { y:-60, opacity:0, ease:"power2.in", duration:.6 }, 0)
+      .to(".hero-name .l1", { xPercent:-80, opacity:0, ease:"power2.in", duration:1.1 }, 0.1)
+      .to(".hero-name .l2", { xPercent:80, opacity:0, ease:"power2.in", duration:1.1 }, 0.1)
+      .to("#grid-canvas", { scale:1.4, opacity:.9, duration:4 }, 0)
+      .to(".hero-glow", { left:"50%", top:"55%", scale:1.5, duration:2 }, 0)
+      .fromTo(".scanline", { top:"0%", yPercent:-100, opacity:1 }, { top:"100%", duration:1.2 }, 0.2)
+      .to(".scanline", { opacity:0, duration:.2 }, 1.35)
+      /* rise in, closed */
+      .to("#laptop", { y:"6vh", rotationZ:0, scale:.78, ease:"power3.out", duration:1.2 }, 0.7)
+      /* open the lid and turn towards the viewer */
+      .to("#lid", { rotationX:10, ease:"power2.inOut", duration:1.3 }, 1.6)
+      .to("#laptop", { y:"2vh", rotationX:12, rotationY:0, scale:1, ease:"power2.inOut", duration:1.3 }, 1.6)
+      .to("#os", { opacity:1, duration:.4 }, 2.6)
+      .to(".device-cap", { y:0, opacity:1, ease:"power2.out", duration:.5 }, 2.5)
+      /* the checklist runs line by line */
+      .to(lines, { opacity:1, stagger:.18, duration:.12 }, 2.9)
+      /* dive into the screen */
+      .to(".device-cap", { opacity:0, y:-30, duration:.4 }, 4.75)
+      .to("#laptop", { rotationX:0, scale:2.6, y:"14vh", ease:"power2.in", duration:1 }, 4.8)
+      .to("#device", { autoAlpha:0, duration:.35 }, 5.45);
 
+    /* the laptop leans a little toward the mouse */
+    var tx = gsap.quickTo("#tilt", "rotationY", { duration:.8, ease:"power3" }),
+        ty = gsap.quickTo("#tilt", "rotationX", { duration:.8, ease:"power3" });
+    function onMove(e){ tx((e.clientX/innerWidth-.5)*14); ty(-(e.clientY/innerHeight-.5)*10); }
+    window.addEventListener("mousemove", onMove);
+    return function(){ window.removeEventListener("mousemove", onMove); };
+  });
+
+  mm.add("(min-width: 901px)", function(){
     /* WORK: vertical scroll moves the projects sideways */
     var track = $("#workTrack"), pinEl = $(".work-pin"), now = $("#workNow");
     function dist(){ return Math.max(0, track.scrollWidth - window.innerWidth); }
@@ -851,6 +921,14 @@ body.cursor-view .cursor-dot{opacity:0!important}
 
   /* ===== Mobile / tablet: lighter, no pinning ===== */
   mm.add("(max-width: 900px)", function(){
+    var lines = $$("#term p");
+    gsap.set("#lid", { rotationX:-90 }); gsap.set("#laptop", { rotationX:55, scale:.9 });
+    gsap.set("#os", { opacity:0 }); gsap.set(lines, { opacity:0 });
+    var mt = gsap.timeline({ defaults:{ ease:"none" }, scrollTrigger:{ trigger:"#device", start:"top 85%", end:"bottom 35%", scrub:0.8 } });
+    mt.to("#lid", { rotationX:10, ease:"power2.inOut", duration:1 }, 0)
+      .to("#laptop", { rotationX:12, scale:1, ease:"power2.inOut", duration:1 }, 0)
+      .to("#os", { opacity:1, duration:.2 }, .8)
+      .to(lines, { opacity:1, stagger:.1, duration:.08 }, 1);
     gsap.to(".hero-name .l1", { xPercent:-14, ease:"none", scrollTrigger:{ trigger:"#hero", start:"top top", end:"bottom top", scrub:true } });
     gsap.to(".hero-name .l2", { xPercent:14, ease:"none", scrollTrigger:{ trigger:"#hero", start:"top top", end:"bottom top", scrub:true } });
     $$(".panel").forEach(function(p){
@@ -900,6 +978,11 @@ body.cursor-view .cursor-dot{opacity:0!important}
     scrollTrigger:{ trigger:ct, start:"top 85%", end:"bottom 45%", scrub:0.5 } });
   gsap.from(".contact-sub, .contact-mail, .contact-actions, .socials", { y:30, opacity:0, stagger:.08, duration:1, ease:"expo.out",
     scrollTrigger:{ trigger:".contact-sub", start:"top 90%" } });
+
+  /* headings lean with scroll speed */
+  var skewTo = gsap.quickTo(".sec-title, .contact-title", "skewY", { duration:.5, ease:"power3" });
+  ScrollTrigger.create({ onUpdate:function(self){ skewTo(gsap.utils.clamp(-6,6,self.getVelocity()/-400)); } });
+  ScrollTrigger.addEventListener("scrollEnd", function(){ skewTo(0); });
 
   navTriggers();
 
