@@ -15,46 +15,59 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23050506%22/><text x=%2250%22 y=%2266%22 font-size=%2246%22 font-family=%22monospace%22 font-weight=%22bold%22 fill=%22%2340e0a0%22 text-anchor=%22middle%22>MF</text></svg>" />
 <style>
-  /* ATS-friendly CV: single column, real text only, web-safe font, no decorative pseudo-element content. */
+  /*
+    ATS-friendly one-page CV in the style of "Jake's Resume" (the template most used by CS students):
+    single column, real selectable text only, standard section names, no icons, tables or
+    pseudo-element content. Each entry heading is one run of text, "Title — Organization — Location — Dates",
+    so parsers never separate the dates from their entry.
+  */
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:#e9ebee;color:#111;font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10.5pt;line-height:1.27}
-  a{color:#0b4f9c}
+  body{margin:0;background:#e9ebee;color:#111;
+    font-family:Calibri,Carlito,Arial,Helvetica,sans-serif;font-size:10.5pt;line-height:1.22}
+  a{color:inherit;text-decoration:none}
 
   .toolbar{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;
-    padding:12px 16px;background:#111;color:#fff;font-size:13px}
+    padding:12px 16px;background:#111;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:13px}
   .toolbar button,.toolbar a{font:inherit;padding:9px 18px;border-radius:999px;cursor:pointer;border:1px solid #555;
-    color:#fff;background:transparent;text-decoration:none}
+    color:#fff;background:transparent}
   .toolbar .btn-print{background:#3fe0a2;color:#04120c;border-color:#3fe0a2;font-weight:bold}
   .toolbar .hint{color:#bbb;font-size:12px}
 
-  .page{max-width:210mm;margin:24px auto;background:#fff;padding:16mm;box-shadow:0 6px 30px rgba(0,0,0,.15)}
+  .page{max-width:210mm;margin:24px auto;background:#fff;padding:14mm 15mm;box-shadow:0 6px 30px rgba(0,0,0,.15)}
 
-  h1{font-size:20pt;margin:0 0 2pt;line-height:1.15}
-  .headline{font-size:11pt;font-weight:bold;margin:0 0 3pt}
-  .contact{margin:0 0 2pt}
+  /* heading block */
+  h1{font-size:22pt;font-weight:bold;text-align:center;margin:0;letter-spacing:.01em;line-height:1.1}
+  .headline{text-align:center;font-size:11.5pt;margin:2pt 0 3pt}
+  .contact{text-align:center;margin:0;font-size:10pt}
+  .contact a{text-decoration:underline;text-underline-offset:1.5pt}
 
-  h2{font-size:11pt;text-transform:uppercase;letter-spacing:.04em;margin:7pt 0 3pt;padding-bottom:2pt;border-bottom:1px solid #111}
-  h3{font-size:10.2pt;margin:4pt 0 1pt}
-  p{margin:0 0 4pt}
-  ul{margin:1pt 0 3pt;padding-left:15pt}
-  li{margin:0 0 1pt}
-  .skills p{margin-bottom:1pt}
+  /* sections */
+  h2{font-size:12pt;font-weight:bold;font-variant:small-caps;letter-spacing:.03em;margin:7pt 0 3pt;
+    padding-bottom:1pt;border-bottom:1px solid #111}
+  p{margin:0 0 3pt}
+
+  /* entry heading: title, organization and location on the left, dates on the right of the same line */
+  .row{margin:4pt 0 1pt}
+  .row .when{white-space:nowrap;font-weight:bold}
+
+  ul{margin:1pt 0 2pt;padding-left:15pt}
+  li{margin:0 0 1.5pt;padding-left:1pt}
+  .skills p{margin:0 0 1.5pt}
+  .consent{margin-top:6pt;font-size:8pt;color:#333}
 
   @media (max-width:640px){
     .page{margin:0;padding:24px 16px;box-shadow:none}
-    h1{font-size:18pt}
+    h1{font-size:20pt}
   }
 
   @media print{
-    @page{size:A4;margin:8mm 13mm}
-    body{background:#fff;color:#000;font-size:10pt}
-    h1{font-size:18pt}
-    h2{margin:6pt 0 3pt}
+    @page{size:A4;margin:9mm 12mm}
+    body{background:#fff;color:#000}
     .toolbar{display:none !important}
     .page{max-width:none;margin:0;padding:0;box-shadow:none}
-    a{color:#000;text-decoration:none}
-    h2,h3{break-after:avoid;page-break-after:avoid}
+    .consent{color:#000}
+    h2,.row{break-after:avoid;page-break-after:avoid}
     li{break-inside:avoid;page-break-inside:avoid}
   }
 </style>
@@ -71,8 +84,8 @@
 
   <h1>Mahmoud Fawzy</h1>
   <p class="headline">Cybersecurity and AI Student | Full-Stack Developer</p>
-  <p class="contact">Milan, Italy | Phone: +39 393 052 5843 | Email: <a href="mailto:m.fawzyahmed2004@gmail.com">m.fawzyahmed2004@gmail.com</a></p>
-  <p class="contact">GitHub: <a href="https://github.com/mahmoud2004540">https://github.com/mahmoud2004540</a> | LinkedIn: <a href="https://www.linkedin.com/in/mahmoud-fawzi-2162b33a1">https://www.linkedin.com/in/mahmoud-fawzi-2162b33a1</a></p>
+  <p class="contact">Milan, Italy | +39 393 052 5843 | <a href="mailto:m.fawzyahmed2004@gmail.com">m.fawzyahmed2004@gmail.com</a></p>
+  <p class="contact"><a href="https://www.linkedin.com/in/mahmoud-fawzi-2162b33a1">https://www.linkedin.com/in/mahmoud-fawzi-2162b33a1</a> | <a href="https://github.com/mahmoud2004540">https://github.com/mahmoud2004540</a></p>
   <p class="contact">Portfolio: <a href="https://mahmoud2004540.github.io/Website/">https://mahmoud2004540.github.io/Website/</a></p>
 
   <h2>Summary</h2>
@@ -83,52 +96,49 @@
     Looking for a paid cybersecurity internship (tirocinio retribuito) in Milan.</p>
 
   <h2>Education</h2>
-  <h3>Cybersecurity and Artificial Intelligence (1st year) — Università degli Studi di Milano (UniMi) — Milan, Italy — Oct 2026 – Present</h3>
-  <h3>CS50: Introduction to Computer Science — Harvard University (online) — Remote — Completed</h3>
+  <div class="row"><span class="what"><b>Cybersecurity and Artificial Intelligence (1st year)</b> — <i>Università degli Studi di Milano</i> — Milan, Italy — <span class="when">Oct 2026 – Present</span></span></div>
+  <div class="row"><span class="what"><b>CS50: Introduction to Computer Science</b> — <i>Harvard University (online)</i> — Remote — <span class="when">Completed</span></span></div>
 
   <h2>Experience</h2>
-  <h3>Freelance Full-Stack Developer — Self-employed — Remote — Jul 2026 – Present</h3>
+  <div class="row"><span class="what"><b>Freelance Full-Stack Developer</b> — <i>Self-employed</i> — Remote — <span class="when">Jul 2026 – Present</span></span></div>
   <ul>
-    <li>Designed, built and maintain Business Management AI, a multi-tenant SaaS platform for small businesses (point of sale, inventory, invoicing, financial reports) with an Arabic, English and Italian interface, working solo across database, backend and frontend.</li>
+    <li>Designed, built and maintain Business Management AI, a multi-tenant SaaS platform for small businesses (point of sale, inventory, invoicing, financial reports) in Next.js, TypeScript, PostgreSQL and Prisma, working solo across database, backend and frontend.</li>
     <li>Implemented authentication with bcrypt password hashing, signed session cookies and optional TOTP two-factor authentication, plus server-side role-based access control for four staff roles (Owner, Admin, Manager, Cashier).</li>
     <li>Enforced multi-tenant data isolation by scoping server-side data access to the signed-in user's business.</li>
     <li>Integrated Stripe Checkout and PayPal so card details are entered on the providers' hosted pages and never stored on the server; encrypted stored third-party API credentials with AES-256-GCM.</li>
-    <li>Added an audit log of sensitive actions and automated tests with Vitest and Playwright.</li>
+    <li>Added an audit log of sensitive actions, customer portal access through single-use expiring links, and automated tests with Vitest and Playwright.</li>
   </ul>
 
   <h2>Projects</h2>
-  <h3>Business Management AI — Personal SaaS product — Remote — Jul 2026 – Present</h3>
+  <div class="row"><span class="what"><b>Rehlati, Flights and Hotels</b> — <i>Next.js, TypeScript, Prisma, next-intl</i> — <span class="when">Aug 2026 – Sep 2026</span></span></div>
   <ul>
-    <li>Next.js, TypeScript, PostgreSQL, Prisma, Tailwind CSS; AI insights dashboard and a customer portal with single-use, expiring links.</li>
+    <li>Built a flight and hotel search platform that compares prices from multiple providers in a single request, with Arabic and English localization. Code: https://github.com/mahmoud2004540/Book-flights-and-hotels</li>
   </ul>
-  <h3>Rehlati, Flights and Hotels — Personal project — Remote — Aug 2026 – Sep 2026</h3>
-  <ul>
-    <li>Built a flight and hotel search platform that compares prices from multiple providers in a single request.</li>
-    <li>Used strict TypeScript, Arabic and English localization (next-intl) and Prisma. Code: https://github.com/mahmoud2004540/Book-flights-and-hotels</li>
-  </ul>
-  <h3>Trading Deals Bot — Personal project — Remote — Jul 2026 – Present</h3>
+  <div class="row"><span class="what"><b>Trading Deals Bot</b> — <i>Python, Telegram, GitHub Actions</i> — <span class="when">Jul 2026 – Present</span></span></div>
   <ul>
     <li>Developed a Python bot that analyzes crypto, stock and forex markets with technical indicators and flags unusual activity.</li>
     <li>Automated scheduled runs with GitHub Actions; delivers trade suggestions with risk management through a CLI and a Telegram bot. Code: https://github.com/mahmoud2004540/app</li>
   </ul>
-  <h3>shortpipe, Script to Video — Personal project — Remote — Aug 2026</h3>
+  <div class="row"><span class="what"><b>shortpipe, Script to Video</b> — <i>Python, Whisper, FFmpeg</i> — <span class="when">Aug 2026</span></span></div>
   <ul>
-    <li>Wrote a Python tool that turns a written script into a vertical 1080x1920 video with voiceover, visuals and automatic captions (Whisper, FFmpeg). Code: https://github.com/mahmoud2004540/Creating-videos</li>
+    <li>Wrote a Python tool that turns a written script into a vertical 1080x1920 video with voiceover, visuals and automatic captions. Code: https://github.com/mahmoud2004540/Creating-videos</li>
   </ul>
 
   <h2>Skills</h2>
   <div class="skills">
-    <p><strong>Security (learning):</strong> Web application security (OWASP Top 10), authentication and authorization, access control, secure payment integration, Linux, networking fundamentals (TCP/IP)</p>
-    <p><strong>Languages:</strong> Python, JavaScript, TypeScript, SQL, HTML5, CSS3</p>
-    <p><strong>Frontend:</strong> React, Next.js, Tailwind CSS, responsive and right-to-left design</p>
-    <p><strong>Backend:</strong> Node.js, REST APIs, authentication, multi-tenant architecture</p>
-    <p><strong>Databases:</strong> PostgreSQL, Prisma ORM</p>
-    <p><strong>Integrations:</strong> Stripe, PayPal, third-party APIs</p>
-    <p><strong>Tools:</strong> Git, GitHub, GitHub Actions, internationalization (i18n), cloud, AI (learning)</p>
+    <p><b>Security (learning):</b> Web application security (OWASP Top 10), authentication and authorization, access control, secure payment integration, Linux, networking fundamentals (TCP/IP)</p>
+    <p><b>Languages:</b> Python, JavaScript, TypeScript, SQL, HTML5, CSS3</p>
+    <p><b>Frontend:</b> React, Next.js, Tailwind CSS, responsive and right-to-left design</p>
+    <p><b>Backend:</b> Node.js, REST APIs, authentication, multi-tenant architecture</p>
+    <p><b>Databases:</b> PostgreSQL, Prisma ORM</p>
+    <p><b>Integrations:</b> Stripe, PayPal, third-party APIs</p>
+    <p><b>Tools:</b> Git, GitHub, GitHub Actions, internationalization (i18n), cloud, AI (learning)</p>
   </div>
 
   <h2>Languages</h2>
   <p>Arabic (Native), English (Professional working proficiency), Italian (Basic, A2)</p>
+
+  <p class="consent" lang="it">Autorizzo il trattamento dei miei dati personali presenti nel CV ai sensi del D.Lgs. 196/2003 e del Regolamento UE 2016/679 (GDPR).</p>
 
 </div>
 
