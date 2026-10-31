@@ -3,184 +3,133 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mahmoud Fawzy — CV</title>
-<meta name="description" content="Curriculum Vitae of Mahmoud Fawzy, Full-Stack Software Engineer." />
+<!-- The <title> is used by browsers as the default file name for "Save as PDF". -->
+<title>Mahmoud_Fawzy_CV_Cybersecurity</title>
+<meta name="description" content="CV of Mahmoud Fawzy, Cybersecurity and AI student at Università degli Studi di Milano and full-stack developer, based in Milan, Italy. Open to cybersecurity internships in Milan." />
+<meta name="author" content="Mahmoud Fawzy" />
 <meta name="robots" content="index, follow" />
-<meta name="theme-color" content="#050506" />
 <link rel="canonical" href="https://mahmoud2004540.github.io/Website/cv.html" />
-<meta property="og:title" content="Mahmoud Fawzy — CV" />
-<meta property="og:description" content="CV of Mahmoud Fawzy — Full-Stack Software Engineer." />
+<meta property="og:title" content="Mahmoud Fawzy — CV — Cybersecurity &amp; AI Student · Full-Stack Developer" />
+<meta property="og:description" content="Cybersecurity and AI student at UniMi, full-stack developer, based in Milan, Italy. Open to cybersecurity internships in Milan." />
 <meta property="og:image" content="https://mahmoud2004540.github.io/Website/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23050506%22/><text x=%2250%22 y=%2266%22 font-size=%2246%22 font-family=%22monospace%22 font-weight=%22bold%22 fill=%22%2340e0a0%22 text-anchor=%22middle%22>MF</text></svg>" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
-  :root{
-    --bg:#050506; --panel:#0c0e11; --text:#f3f4f0; --muted:#9aa39b; --faint:#565d57;
-    --line:rgba(255,255,255,.1); --accent:#3fe0a2;
-    --fd:"Space Grotesk","Inter",sans-serif; --fb:"Inter",system-ui,sans-serif; --fm:"JetBrains Mono",monospace;
+  /* ATS-friendly CV: single column, real text only, web-safe font, no decorative pseudo-element content. */
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:#e9ebee;color:#111;font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10.5pt;line-height:1.27}
+  a{color:#0b4f9c}
+
+  .toolbar{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;
+    padding:12px 16px;background:#111;color:#fff;font-size:13px}
+  .toolbar button,.toolbar a{font:inherit;padding:9px 18px;border-radius:999px;cursor:pointer;border:1px solid #555;
+    color:#fff;background:transparent;text-decoration:none}
+  .toolbar .btn-print{background:#3fe0a2;color:#04120c;border-color:#3fe0a2;font-weight:bold}
+  .toolbar .hint{color:#bbb;font-size:12px}
+
+  .page{max-width:210mm;margin:24px auto;background:#fff;padding:16mm;box-shadow:0 6px 30px rgba(0,0,0,.15)}
+
+  h1{font-size:20pt;margin:0 0 2pt;line-height:1.15}
+  .headline{font-size:11pt;font-weight:bold;margin:0 0 3pt}
+  .contact{margin:0 0 2pt}
+
+  h2{font-size:11pt;text-transform:uppercase;letter-spacing:.04em;margin:7pt 0 3pt;padding-bottom:2pt;border-bottom:1px solid #111}
+  h3{font-size:10.2pt;margin:4pt 0 1pt}
+  p{margin:0 0 4pt}
+  ul{margin:1pt 0 3pt;padding-left:15pt}
+  li{margin:0 0 1pt}
+  .skills p{margin-bottom:1pt}
+
+  @media (max-width:640px){
+    .page{margin:0;padding:24px 16px;box-shadow:none}
+    h1{font-size:18pt}
   }
-  *{box-sizing:border-box;margin:0}
-  body{background:var(--bg);color:var(--text);font-family:var(--fb);line-height:1.55;-webkit-font-smoothing:antialiased}
-  a{color:inherit;text-decoration:none}
-
-  .toolbar{position:sticky;top:0;z-index:10;display:flex;justify-content:center;gap:12px;padding:16px;
-    background:rgba(5,5,6,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .toolbar button,.toolbar a{font:inherit;font-family:var(--fm);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;
-    padding:12px 22px;border-radius:999px;cursor:pointer;border:1px solid var(--line);color:var(--text);background:transparent;
-    transition:border-color .2s,color .2s,background .2s;display:inline-flex;align-items:center;gap:9px}
-  .btn-print{background:var(--accent);color:#04120c;border-color:var(--accent)}
-  .toolbar a:hover{border-color:var(--accent);color:var(--accent)}
-
-  .page{max-width:860px;margin:34px auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;
-    padding:52px 56px;box-shadow:0 40px 90px -40px rgba(0,0,0,.8)}
-
-  .head{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:28px}
-  .name{font-family:var(--fd);font-weight:700;font-size:2.6rem;letter-spacing:-.02em;line-height:1}
-  .name .dot{color:var(--accent)}
-  .role{font-family:var(--fm);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:14px 0 18px}
-  .contact{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--fm);font-size:.8rem;color:var(--muted)}
-  .contact a:hover{color:var(--accent)}
-
-  section{margin-bottom:26px}
-  h2{font-family:var(--fm);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
-    border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:16px;display:flex;gap:10px}
-  h2::before{content:"//";color:var(--accent)}
-  p.sum{color:var(--muted);font-size:.98rem}
-
-  .skills{display:grid;grid-template-columns:130px 1fr;gap:8px 16px;font-size:.9rem}
-  .skills dt{font-family:var(--fm);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);padding-top:2px}
-  .skills dd{margin:0;color:var(--muted)}
-
-  .entry{margin-bottom:18px}
-  .entry:last-child{margin-bottom:0}
-  .etop{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
-  .etitle{font-family:var(--fd);font-weight:600;font-size:1.08rem}
-  .estack{font-family:var(--fm);font-size:.74rem;color:var(--faint)}
-  .eorg{color:var(--accent);font-family:var(--fm);font-size:.8rem;margin:3px 0 8px}
-  ul{margin:6px 0 0;padding-inline-start:18px}
-  li{color:var(--muted);font-size:.9rem;margin-bottom:4px}
-  li::marker{color:var(--accent)}
-
-  @media (max-width:640px){.page{padding:34px 24px;margin:16px}.skills{grid-template-columns:1fr;gap:2px}.name{font-size:2rem}}
 
   @media print{
-    :root{--bg:#fff;--panel:#fff;--text:#111;--muted:#333;--faint:#666;--line:#ddd;--accent:#0a7a4f}
-    .toolbar{display:none}
-    body{background:#fff}
-    .page{box-shadow:none;border:0;margin:0;max-width:none;padding:0;border-radius:0}
-    a{color:#111}
-    .entry,section{page-break-inside:avoid}
-    @page{margin:15mm}
+    @page{size:A4;margin:8mm 13mm}
+    body{background:#fff;color:#000;font-size:10pt}
+    h1{font-size:18pt}
+    h2{margin:6pt 0 3pt}
+    .toolbar{display:none !important}
+    .page{max-width:none;margin:0;padding:0;box-shadow:none}
+    a{color:#000;text-decoration:none}
+    h2,h3{break-after:avoid;page-break-after:avoid}
+    li{break-inside:avoid;page-break-inside:avoid}
   }
 </style>
 </head>
 <body>
 
 <div class="toolbar">
-  <button class="btn-print" type="button" onclick="window.print()">⤓ Save as PDF</button>
-  <a href="index.html">← Back to portfolio</a>
+  <button class="btn-print" type="button" onclick="window.print()">Save as PDF</button>
+  <a href="index.html">Back to portfolio</a>
+  <span class="hint">Suggested file name: Mahmoud_Fawzy_CV_Cybersecurity.pdf</span>
 </div>
 
 <div class="page">
-  <header class="head">
-    <div class="name">Mahmoud Fawzy<span class="dot">.</span></div>
-    <div class="role">Full-Stack Software Engineer</div>
-    <div class="contact">
-      <a href="mailto:m.fawzyahmed2004@gmail.com">m.fawzyahmed2004@gmail.com</a>
-      <a href="tel:+393930525843">+39 393 052 5843</a>
-      <a href="https://github.com/mahmoud2004540" target="_blank" rel="noopener">github.com/mahmoud2004540</a>
-      <a href="https://www.linkedin.com/in/mahmoud-fawzi-2162b33a1" target="_blank" rel="noopener">linkedin.com/in/mahmoud-fawzi-2162b33a1</a>
-    </div>
-  </header>
 
-  <section>
-    <h2>Summary</h2>
-    <p class="sum">Self-taught full-stack software engineer who turns ideas into production-ready products.
-      I designed and built Business Management AI — a complete multi-tenant business platform — from scratch,
-      solo, alongside a range of web and automation projects. I care about clean code, performance and shipping,
-      and I'm looking to join a technical team where I can contribute and keep growing.</p>
-  </section>
+  <h1>Mahmoud Fawzy</h1>
+  <p class="headline">Cybersecurity and AI Student | Full-Stack Developer</p>
+  <p class="contact">Milan, Italy | Phone: +39 393 052 5843 | Email: <a href="mailto:m.fawzyahmed2004@gmail.com">m.fawzyahmed2004@gmail.com</a></p>
+  <p class="contact">GitHub: <a href="https://github.com/mahmoud2004540">https://github.com/mahmoud2004540</a> | LinkedIn: <a href="https://www.linkedin.com/in/mahmoud-fawzi-2162b33a1">https://www.linkedin.com/in/mahmoud-fawzi-2162b33a1</a></p>
+  <p class="contact">Portfolio: <a href="https://mahmoud2004540.github.io/Website/">https://mahmoud2004540.github.io/Website/</a></p>
 
-  <section>
-    <h2>Skills</h2>
-    <dl class="skills">
-      <dt>Languages</dt><dd>JavaScript, TypeScript, Python, HTML5, CSS3, SQL</dd>
-      <dt>Frontend</dt><dd>React, Next.js, Tailwind CSS, responsive &amp; RTL design</dd>
-      <dt>Backend</dt><dd>Node.js, REST APIs, authentication, multi-tenant architecture</dd>
-      <dt>Databases</dt><dd>PostgreSQL, Prisma ORM</dd>
-      <dt>Integrations</dt><dd>Stripe, PayPal, third-party APIs</dd>
-      <dt>Tools</dt><dd>Git, GitHub, i18n / localization, cloud, AI (learning)</dd>
-    </dl>
-  </section>
+  <h2>Summary</h2>
+  <p>First-year Cybersecurity and Artificial Intelligence student at Università degli Studi di Milano (UniMi).
+    Self-taught full-stack developer who built a multi-tenant SaaS platform solo, including authentication,
+    access control, tenant data isolation and secure payment integration.
+    Interested in application security, secure architecture and defensive security.
+    Looking for a paid cybersecurity internship (tirocinio retribuito) in Milan.</p>
 
-  <section>
-    <h2>Experience</h2>
-    <div class="entry">
-      <div class="etop"><span class="etitle">Full-Stack Developer — Business Management AI</span><span class="estack">Ongoing · Personal Project</span></div>
-      <div class="eorg">Self-Directed</div>
-      <ul>
-        <li>Designed and built a multi-tenant business management platform from scratch, solo — database, backend and frontend.</li>
-        <li>Point of sale, inventory, invoicing, expenses, financial reports and staff accounts.</li>
-        <li>Real online payments via Stripe and PayPal, plus a customer portal.</li>
-        <li>AI-powered insights dashboard and a trilingual (Arabic / English / Italian) interface with full RTL.</li>
-      </ul>
-    </div>
-  </section>
+  <h2>Education</h2>
+  <h3>Cybersecurity and Artificial Intelligence (1st year) — Università degli Studi di Milano (UniMi) — Milan, Italy — Oct 2026 – Present</h3>
+  <h3>CS50: Introduction to Computer Science — Harvard University (online) — Remote — Completed</h3>
 
-  <section>
-    <h2>Selected Projects</h2>
-    <div class="entry">
-      <div class="etop"><span class="etitle">Business Management AI — Flagship</span><span class="estack">Next.js · TypeScript · PostgreSQL · Prisma</span></div>
-      <ul>
-        <li>Multi-tenant SaaS platform for small businesses and shops — POS, inventory, invoicing, expenses, reports and staff accounts.</li>
-        <li>AI-generated insights dashboard, a customer portal, and real online payments via Stripe and PayPal.</li>
-      </ul>
-    </div>
-    <div class="entry">
-      <div class="etop"><span class="etitle">Rehlati — Flights &amp; Hotels</span><span class="estack">Next.js 16 · TypeScript · Prisma</span></div>
-      <ul>
-        <li>Flight &amp; hotel search and booking platform comparing prices from multiple providers in one request.</li>
-        <li>Strict TypeScript, full Arabic/English localization, and a complete Prisma database schema.</li>
-        <li>github.com/mahmoud2004540/Book-flights-and-hotels</li>
-      </ul>
-    </div>
-    <div class="entry">
-      <div class="etop"><span class="etitle">Trading Deals Bot</span><span class="estack">Python · Telegram · GitHub Actions</span></div>
-      <ul>
-        <li>Automated bot analyzing crypto, stocks and forex with technical indicators and whale detection.</li>
-        <li>Suggests trades with risk management via a CLI and a Telegram bot running on GitHub Actions.</li>
-        <li>github.com/mahmoud2004540/app</li>
-      </ul>
-    </div>
-    <div class="entry">
-      <div class="etop"><span class="etitle">shortpipe — Script to Video</span><span class="estack">Python · Whisper · FFmpeg</span></div>
-      <ul>
-        <li>Turns a written script into an upload-ready vertical video (1080×1920) — voiceover, visuals, editing and auto-captions.</li>
-        <li>github.com/mahmoud2004540/Creating-videos</li>
-      </ul>
-    </div>
-  </section>
+  <h2>Experience</h2>
+  <h3>Freelance Full-Stack Developer — Self-employed — Remote — Jul 2026 – Present</h3>
+  <ul>
+    <li>Designed, built and maintain Business Management AI, a multi-tenant SaaS platform for small businesses (point of sale, inventory, invoicing, financial reports) with an Arabic, English and Italian interface, working solo across database, backend and frontend.</li>
+    <li>Implemented authentication with bcrypt password hashing, signed session cookies and optional TOTP two-factor authentication, plus server-side role-based access control for four staff roles (Owner, Admin, Manager, Cashier).</li>
+    <li>Enforced multi-tenant data isolation by scoping server-side data access to the signed-in user's business.</li>
+    <li>Integrated Stripe Checkout and PayPal so card details are entered on the providers' hosted pages and never stored on the server; encrypted stored third-party API credentials with AES-256-GCM.</li>
+    <li>Added an audit log of sensitive actions and automated tests with Vitest and Playwright.</li>
+  </ul>
 
-  <section>
-    <h2>Education</h2>
-    <div class="entry">
-      <div class="etop"><span class="etitle">CS50: Introduction to Computer Science</span><span class="estack">Self-Taught</span></div>
-      <div class="eorg">Harvard University — Online</div>
-      <ul><li>Computer-science fundamentals, algorithms and full-stack web development, self-studied online.</li></ul>
-    </div>
-    <div class="entry">
-      <div class="etop"><span class="etitle">High School Diploma</span><span class="estack">Completed</span></div>
-      <div class="eorg">Secondary Education</div>
-    </div>
-  </section>
+  <h2>Projects</h2>
+  <h3>Business Management AI — Personal SaaS product — Remote — Jul 2026 – Present</h3>
+  <ul>
+    <li>Next.js, TypeScript, PostgreSQL, Prisma, Tailwind CSS; AI insights dashboard and a customer portal with single-use, expiring links.</li>
+  </ul>
+  <h3>Rehlati, Flights and Hotels — Personal project — Remote — Aug 2026 – Sep 2026</h3>
+  <ul>
+    <li>Built a flight and hotel search platform that compares prices from multiple providers in a single request.</li>
+    <li>Used strict TypeScript, Arabic and English localization (next-intl) and Prisma. Code: https://github.com/mahmoud2004540/Book-flights-and-hotels</li>
+  </ul>
+  <h3>Trading Deals Bot — Personal project — Remote — Jul 2026 – Present</h3>
+  <ul>
+    <li>Developed a Python bot that analyzes crypto, stock and forex markets with technical indicators and flags unusual activity.</li>
+    <li>Automated scheduled runs with GitHub Actions; delivers trade suggestions with risk management through a CLI and a Telegram bot. Code: https://github.com/mahmoud2004540/app</li>
+  </ul>
+  <h3>shortpipe, Script to Video — Personal project — Remote — Aug 2026</h3>
+  <ul>
+    <li>Wrote a Python tool that turns a written script into a vertical 1080x1920 video with voiceover, visuals and automatic captions (Whisper, FFmpeg). Code: https://github.com/mahmoud2004540/Creating-videos</li>
+  </ul>
 
-  <section>
-    <h2>Languages</h2>
-    <p class="sum">Arabic (Native) · English (Professional working proficiency)</p>
-  </section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <p><strong>Security (learning):</strong> Web application security (OWASP Top 10), authentication and authorization, access control, secure payment integration, Linux, networking fundamentals (TCP/IP)</p>
+    <p><strong>Languages:</strong> Python, JavaScript, TypeScript, SQL, HTML5, CSS3</p>
+    <p><strong>Frontend:</strong> React, Next.js, Tailwind CSS, responsive and right-to-left design</p>
+    <p><strong>Backend:</strong> Node.js, REST APIs, authentication, multi-tenant architecture</p>
+    <p><strong>Databases:</strong> PostgreSQL, Prisma ORM</p>
+    <p><strong>Integrations:</strong> Stripe, PayPal, third-party APIs</p>
+    <p><strong>Tools:</strong> Git, GitHub, GitHub Actions, internationalization (i18n), cloud, AI (learning)</p>
+  </div>
+
+  <h2>Languages</h2>
+  <p>Arabic (Native), English (Professional working proficiency), Italian (Basic, A2)</p>
+
 </div>
 
 </body>
