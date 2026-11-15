@@ -1,6 +1,6 @@
-# Mahmoud Fawzy — Portfolio
+# Mahmoud Fawzi — Portfolio
 
-Personal portfolio of Mahmoud Fawzy, a self-taught full-stack software engineer.
+Personal portfolio of Mahmoud Fawzi, a self-taught full-stack software engineer.
 
 **Live:** https://mahmoud2004540.github.io/Website/
 
